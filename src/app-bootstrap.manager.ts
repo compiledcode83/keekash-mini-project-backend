@@ -28,7 +28,11 @@ export class AppBootstrapManager {
           stopAtFirstError: true,
         }),
       )
-      .enableCors();
+      .enableCors({
+        origin: ['https://currency-api-2022-11-07.herokuapp.com'],
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        credentials: true,
+      });
 
     return app;
   }
